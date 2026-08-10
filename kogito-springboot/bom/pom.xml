@@ -53,20 +53,16 @@
          https://logging.apache.org/security.html#CVE-2026-49844 -->
     <version.org.apache.logging.log4j>2.26.1</version.org.apache.logging.log4j>
     <!-- CVE-2026-59889: force-pin jackson-databind to 3.1.5.
-         spring-boot-dependencies:4.0.7 imports tools.jackson:jackson-bom:3.1.4 which carries
-         the vulnerable jackson-databind:3.1.4. Importing jackson-bom:3.1.5 before
-         spring-boot-dependencies overrides the transitive version for all spring-boot-* carriers.
-         Remove this pin once spring-boot-dependencies imports jackson-bom >= 3.1.5. -->
-    <version.tools.jackson>3.1.5</version.tools.jackson> <!-- CVE-2026-59889: override jackson-bom before spring-boot-dependencies import -->
+         spring-boot-dependencies:4.0.7 carries the vulnerable jackson-databind:3.1.4.
+         Remove this pin once spring-boot-dependencies imports jackson-databind >= 3.1.5. -->
+    <version.tools.jackson.core>3.1.5</version.tools.jackson.core>
   </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>tools.jackson</groupId>
-        <artifactId>jackson-bom</artifactId>
-        <version>${version.tools.jackson}</version>
-        <type>pom</type>
-        <scope>import</scope>
+        <groupId>tools.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${version.tools.jackson.core}</version>
       </dependency>
       <dependency>
         <groupId>org.springframework.cloud</groupId>
