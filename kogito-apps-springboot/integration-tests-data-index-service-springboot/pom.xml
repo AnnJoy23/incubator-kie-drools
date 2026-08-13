@@ -47,14 +47,28 @@
     <dependency>
       <groupId>org.kie.kogito</groupId>
       <artifactId>data-index-service-postgresql</artifactId>
+      <version>${project.version}</version>
       <type>pom</type>
       <scope>provided</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.kie.kogito</groupId>
       <artifactId>data-index-service-mongodb</artifactId>
+      <version>${project.version}</version>
       <type>pom</type>
       <scope>provided</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.jbpm</groupId>
