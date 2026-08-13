@@ -139,6 +139,27 @@
         <artifactId>kogito-addons-springboot-embedded-jobs-jpa</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <!-- pom-type entries so IT modules can declare pom/provided reactor-edge deps
+           without hardcoding <version> in each POM. Mirrors the pattern used in
+           kogito-apps-quarkus-bom for jobs-service-quarkus/jobs-service-postgresql-common. -->
+      <dependency>
+        <groupId>org.kie.kogito</groupId>
+        <artifactId>data-index-service-postgresql</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.kie.kogito</groupId>
+        <artifactId>data-index-service-mongodb</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.kie.kogito</groupId>
+        <artifactId>jobs-service-common</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
