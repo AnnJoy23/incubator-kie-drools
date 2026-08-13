@@ -41,6 +41,21 @@
   </properties>
 
   <dependencies>
+    <!-- Ensure the Docker images used by this IT are built before this module runs.
+         These pom/provided deps create explicit reactor edges that the dep-graph extractor
+         picks up, so partial builds include the image-producing modules in the upstream pass. -->
+    <dependency>
+      <groupId>org.kie.kogito</groupId>
+      <artifactId>data-index-service-postgresql</artifactId>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.kie.kogito</groupId>
+      <artifactId>data-index-service-mongodb</artifactId>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>org.jbpm</groupId>
       <artifactId>jbpm-with-drools-spring-boot-starter</artifactId>

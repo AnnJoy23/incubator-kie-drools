@@ -40,6 +40,15 @@
   </properties>
 
   <dependencies>
+    <!-- Ensure the Docker image used by this IT is built before this module runs.
+         This pom/provided dep creates an explicit reactor edge that the dep-graph extractor
+         picks up, so partial builds include the image-producing module in the upstream pass. -->
+    <dependency>
+      <groupId>org.kie.kogito</groupId>
+      <artifactId>jobs-service-common</artifactId>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>org.jbpm</groupId>
       <artifactId>jbpm-with-drools-spring-boot-starter</artifactId>
