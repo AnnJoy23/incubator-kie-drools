@@ -160,6 +160,18 @@
       </dependency>
       <dependency>
         <groupId>org.kie.kogito</groupId>
+        <artifactId>data-index-service-postgresql</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.kie.kogito</groupId>
+        <artifactId>data-index-service-mongodb</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.kie.kogito</groupId>
         <artifactId>data-index-shared-output-mutation</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -327,6 +339,12 @@
         <artifactId>jobs-service-common</artifactId>
         <version>${project.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>org.kie.kogito</groupId>
+        <artifactId>jobs-service-common</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
       </dependency>
       <dependency>
         <groupId>org.kie.kogito</groupId>
